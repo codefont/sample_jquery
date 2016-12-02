@@ -1,0 +1,22 @@
+{
+  "name": "sample_jquery",
+  "version": "1.0.0",
+  "description": "a sample code of Using jQuery",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nokogiring/sample_jquery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nokogiring/sample_jquery/issues"
+  },
+  "homepage": "https://github.com/nokogiring/sample_jquery#readme",
+  "devDependencies": {
+    "express": "^4.14.0"
+  }
+}
