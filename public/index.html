@@ -3,18 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <!--Bootstrapのソース-->        
+    <!--Bootstrapのソース-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
-    <!--自作のソース-->        
+    <!--自作のソース-->
     <link rel="stylesheet" href="css/main.css">
     <title>Sample jQuery</title>
 </head>
 
-
 <body>
-
     <div class="content">
         <h1>Sample jQuery</h1>
         <hr>
@@ -23,7 +20,6 @@
             <p>クリックすると下の文字色が変わります</p>
             <p id="text-red">this id is text-red <input id="btn1" class="btn btn-default" type="button" value="change"></p>
         </div>
-
         <hr>
         <h3>class指定</h3>
         <div class="desc">
@@ -35,32 +31,57 @@
                 <li>ビール</li>
             </ol>
         </div>
-
         <hr>
         <h3>for each</h3>
         <div class="desc">
             <p>List内に"a"は何文字ありますか？<input id="btn2" class="btn btn-default" type="button" value="Count"></p>
             <ul class="cnt-word">
-                <li>I have a dream that one day this nation will rise up and live out the true meaning of its creed: "We hold these truths to be self-evident: that all men are created equal." </li>
-                <li>I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.</li>
-                <li>I have a dream that one day even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice.</li>
+                <li>I have a dream that one day this nation will rise up and live out the true meaning of its creed: "We hold
+                    these truths to be self-evident: that all men are created equal." </li>
+                <li>I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former
+                    slave owners will be able to sit down together at the table of brotherhood.</li>
+                <li>I have a dream that one day even the state of Mississippi, a state sweltering with the heat of injustice,
+                    sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice.</li>
                 <li>
-I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.</li>
+                    I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their
+                    skin but by the content of their character.</li>
                 <li>I have a dream today</li>
-                <li>I have a dream that one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of "interposition" and "nullification" </li>
+                <li>I have a dream that one day, down in Alabama, with its vicious racists, with its governor having his lips
+                    dripping with the words of "interposition" and "nullification" </li>
             </ul>
         </div>
-
-
+        <hr>
+        <h3>toggle</h3>
+        <div class="desc">
+            <section class="toggle-space">
+                <input id="btn-toggle" class="btn btn-default" type="button" value="Toggle">
+                <p>Language List</p>
+                <ul class="target-list1">
+                    <li>Java</li>
+                    <li>Ruby</li>
+                    <li>Python</li>
+                </ul>
+            </section>
+            <section class="toggle-space">
+                <input id="btn-slidetoggle" class="btn btn-default" type="button" value="slideToggle">
+                <p>Flamework List</p>                
+                <ul class="target-list2">
+                    <li>Spring</li>
+                    <li>Ruby on Rails</li>
+                    <li>Djungo</li>
+                </ul>
+            </section>
+        </div>
+        <hr>
+        <a href="ajax.html">
+            <button type="button" class="btn btn-default btn-lg">Next Ajax</button>
+        </a>
     </div>
-
     <!--jQeuryのソース-->
     <script src="js/jquery-3.1.1.min.js"></script>
-
-    <!--Bootstrapのソース-->    
+    <!--Bootstrapのソース-->
     <script src="js/bootstrap.min.js"></script>
-
-    <!--自作のソース-->            
+    <!--自作のソース-->
     <script src="js/main.js"></script>
 </body>
 
