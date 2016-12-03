@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Bootstrapのソース-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <!--自作のソース-->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Ajax</title>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Ajaxを使ってみよう</h1>
+        <hr>
+        <h3>Ajaxとは</h3>
+        <p>Ajaxとは、Webブラウザに実装されているJavaScriptのHTTP通信機能を使って、Webページのリロードを伴わずにサーバとXML形式のデータのやり取りを行って処理を進めていく対話型Webアプリケーションの実装形態。</p>
+        <hr>
+        <h3>非同期通信でサーバーからデータを受け取る</h3>
+        <input id="btn-ajax" class="btn btn-default" type="button" value="json形式でサーバーのデータを読み込む">
+        <!--以下のリストに取得したデータを liとして 入れ込む-->
+        <ul id="webpages-list"></ul>
+        
+       
+    </div>
+    <!--jQeuryのソース-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <!--Bootstrapのソース-->
+    <script src="js/bootstrap.min.js"></script>
+    <!--自作のソース-->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

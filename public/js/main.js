@@ -1,6 +1,7 @@
 // 初期処理の宣言
 $(function () {
 
+    // id指定
     // ボタン押下処理
     $('#btn1').click(function () {
         // クリックした後の処理を記載する
@@ -15,6 +16,7 @@ $(function () {
     //     document.getElementById('text-red').style.color = 'red';
     // });
 
+    // クラス指定
     $('.list')
         .mouseover(function () {
             // マウスオーバーした後の処理を書く        
@@ -26,6 +28,7 @@ $(function () {
         });
 
 
+    // for文
     // ボタン押下処理
     $('#btn2').click(function () {
 
@@ -47,6 +50,28 @@ $(function () {
         cnt = 0;
     });
 
+    // toggle
+    $('#btn-toggle').click(function(){
+        $('.target-list1').toggle();
+    });
 
+    // slidetoggle
+    $('#btn-slidetoggle').click(function(){
+
+        // 第一引数に fast,slowなど引数を渡すとスピードを変更可能 msで数値も渡せる
+        $('.target-list2').slideToggle('fast');
+    });
+
+
+    // Ajax処理
+    $('#btn-ajax').click(function(){
+        
+        $.getJSON("/api/webpages", function(data){
+            $.each(data, function(key, val) {
+                $('#webpages-list').append(`<li><a href="${val}">${key}</a></li>`);
+            });
+        });
+
+    });
 
 });
