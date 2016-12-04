@@ -18,12 +18,31 @@
         <h3>Ajaxとは</h3>
         <p>Ajaxとは、Webブラウザに実装されているJavaScriptのHTTP通信機能を使って、Webページのリロードを伴わずにサーバとXML形式のデータのやり取りを行って処理を進めていく対話型Webアプリケーションの実装形態。</p>
         <hr>
-        <h3>非同期通信でサーバーからデータを受け取る</h3>
+        <h3>[GET] 非同期通信でサーバーからデータを受け取る</h3>
         <input id="btn-ajax" class="btn btn-default" type="button" value="json形式でサーバーのデータを読み込む">
+        <br><br>
         <!--以下のリストに取得したデータを liとして 入れ込む-->
-        <ul id="webpages-list"></ul>
-        
-       
+        <pre>
+            <ul id="webpages-list"></ul>
+        </pre>
+        <hr>
+        <h3>[GET] urlにパラメーターを指定する</h3>
+        <label><input type="radio" name="web" value="google"> Google</label>
+        <label><input type="radio" name="web" value="amazon"> Amazon</label>
+        <label><input type="radio" name="web" value="apple"> Apple</label>
+        <input id="btn-ajax2" class="btn btn-default" type="button" value="取得">
+        <br><br>
+        <pre id="result"> </pre>
+        <hr>
+        <h3>[POST] formの送信</h3>
+        <form method="post" action="/api/email">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                <span id="help-email" class="erroremsg"></span>
+            </div>
+        </form>
+        <button id="btn-ajax3" type="button" class="btn btn-default">送信</button>
     </div>
     <!--jQeuryのソース-->
     <script src="js/jquery-3.1.1.min.js"></script>

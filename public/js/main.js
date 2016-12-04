@@ -51,12 +51,12 @@ $(function () {
     });
 
     // toggle
-    $('#btn-toggle').click(function(){
+    $('#btn-toggle').click(function () {
         $('.target-list1').toggle();
     });
 
     // slidetoggle
-    $('#btn-slidetoggle').click(function(){
+    $('#btn-slidetoggle').click(function () {
 
         // 第一引数に fast,slowなど引数を渡すとスピードを変更可能 msで数値も渡せる
         $('.target-list2').slideToggle('fast');
@@ -64,14 +64,96 @@ $(function () {
 
 
     // Ajax処理
-    $('#btn-ajax').click(function(){
-        
-        $.getJSON("/api/webpages", function(data){
-            $.each(data, function(key, val) {
-                $('#webpages-list').append(`<li><a href="${val}">${key}</a></li>`);
-            });
+    $('#btn-ajax').click(function () {
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/webpages',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (key, val) {
+                    $('#webpages-list').append(`<li><a href="${val}">${key}</a></li>`);
+                });
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+                console.log("textStatus : " + XMLHttpRequest.textStatus);
+                console.log("errorThrown : " + XMLHttpRequest.errorThrown);
+            }
         });
 
+    });
+
+    // Ajax処理
+    $('#btn-ajax2').click(function () {
+
+        var param = "";
+
+        // チェックボックスの中で選択している項目のバリューを取得
+        for (var item of $('[name=web]')) {
+            if (item.checked === true) {
+                param = item.value;
+            }
+        }
+
+        if (param === undefined) {
+            window.alert("何か選択してださい");
+            // break;
+        }
+        console.log(param);
+
+        $.ajax({
+            type: 'GET',
+            url: '/api/webpages/key/?pagekey=' + param,
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (key, val) {
+                    $('#result').html(`<a href="${val}">${val}</a>`);
+                    // $('#webpages-list').append(`<li><a href="${val}">${key}</a></li>`);
+                });
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+                console.log("textStatus : " + XMLHttpRequest.textStatus);
+                console.log("errorThrown : " + XMLHttpRequest.errorThrown);
+            }
+        });
+
+    });
+
+    // Ajax処理
+    // input#emailにキーボード入力があった場合に発火
+    $('#email').keyup(function () {
+
+        // emailの入力内容を取得
+        var param_email = $('#email').val();
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/email',
+            // POSTするデータ
+            data: {
+                'email': param_email
+            },
+            // サーバーから返却されるデータの種類
+            dataType: 'json',
+            // 成功時の処理
+            success: function (data) {
+                $("#help-email").css("display","inline");
+                if (data.isSuccess === false) {
+                    $("#help-email").css("color","#F44336");                    
+                    $("#help-email").text(data.msg);
+                } else {
+                    $("#help-email").css("color","#4CAF50");
+                    $("#help-email").text(data.msg);                    
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+                console.log("textStatus : " + XMLHttpRequest.textStatus);
+                console.log("errorThrown : " + XMLHttpRequest.errorThrown);
+            }
+        });
     });
 
 });
